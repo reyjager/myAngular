@@ -1,0 +1,32 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-project2',
+  standalone: true,
+  template: `
+    <div class="content-header">
+      <h1>Project 2</h1>
+    </div>
+    <div class="content-body">
+      <div class="card">
+        <h2>Project 2 Details</h2>
+        <p>This is the Project 2 page.</p>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .content-body {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+  `]
+})
+export class Project2Component {}
