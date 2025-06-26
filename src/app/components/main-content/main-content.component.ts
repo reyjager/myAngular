@@ -7,15 +7,25 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <main class="main-content">
-      <router-outlet></router-outlet>
+      <div class="container-sm">
+        <router-outlet></router-outlet>
+      </div>
     </main>
   `,
-  styles: [`
-    .main-content {
-      flex: 1;
-      padding: 1.5rem;
-      overflow-y: auto;
-    }
-  `]
+  styles: [
+    `
+      .main-content {
+        flex: 1;
+        padding: 1.5rem;
+        height: calc(100vh - 20px);
+        width: calc(100% - 400px);
+        overflow-y: auto;
+        overflow-x: auto;
+        margin: 10px;
+      }
+
+
+    `,
+  ],
 })
 export class MainContentComponent {}

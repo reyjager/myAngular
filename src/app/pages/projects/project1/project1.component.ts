@@ -1,32 +1,33 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-project1',
   standalone: true,
-  template: `
-    <div class="content-header">
-      <h1>Project 1</h1>
-    </div>
-    <div class="content-body">
-      <div class="card">
-        <h2>Project 1 Details</h2>
-        <p>This is the Project 1 page.</p>
-      </div>
-    </div>
-  `,
-  styles: [`
-    .content-body {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-    }
-  `]
+  imports: [NgFor],
+  templateUrl: './project1.component.html',
+  styleUrl: './project1.component.scss'
 })
-export class Project1Component {}
+export class Project1Component {
+ //how to declare variable
+ name:string="Renante Jaguines";
+// i want to declare all my personal info here
+firstName:string="Renante";
+lastName:string="Jaguines";
+age:number=21;
+address:string="Pampanga";
+email:string="XXXXXXXXXXXXXXXXXXXXXXXXX";
+contact:number=123456789;
+//how to declare array
+hobbies:string[]=["Reading","Playing","Watching","Sleeping"];
+//how to declare object
+personalInfo:any={
+  firstName:"Renante",
+  lastName:"Jaguines",
+  age:21,
+  address:"Pampanga",
+  email:"XXXXXXXXXXXXXXXXXXXXXXXXX",
+  contact:123456789,
+  hobbies:["Reading","Playing","Watching","Sleeping"]
+}
+}
