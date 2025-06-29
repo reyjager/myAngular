@@ -62,12 +62,18 @@ interface MenuItem {
       height: 100%;
       background-color: #f5f5f5;
       border-right: 1px solid #e0e0e0;
-      padding: 1rem 0;
+      margin: 0.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-sizing: border-box;
+      max-width: calc(100% - 1rem);
     }
 
     .sidebar-header {
-      padding: 0 1.5rem 1rem;
+      padding: 1rem;
+      margin: 0.5rem;
       border-bottom: 1px solid #e0e0e0;
+      box-sizing: border-box;
     }
 
     .sidebar-header h3 {
@@ -79,7 +85,8 @@ interface MenuItem {
     .sidebar-nav ul {
       list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin: 0.5rem;
+      box-sizing: border-box;
     }
 
     .sidebar-nav li {

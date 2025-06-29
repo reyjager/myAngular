@@ -1,11 +1,27 @@
 :host {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .app-container {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
   overflow: hidden;
+  margin: 0;
+}
+
+app-main-content {
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+app-main-content * {
+  max-width: 100%;
+  box-sizing: border-box;
 }

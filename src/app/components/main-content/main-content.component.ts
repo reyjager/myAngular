@@ -7,24 +7,36 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <main class="main-content">
-      <div class="container-sm">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
+      <!-- <div class="card">
+        <p>kkkkkkkkk</p>
+      </div> -->
     </main>
   `,
   styles: [
     `
       .main-content {
-        flex: 1;
-        padding: 1.5rem;
-        height: calc(100vh - 20px);
-        width: calc(100% - 400px);
+        width: 100%;
+        height: 100%;
+        // padding: 2rem;
+        // margin: 1.5rem;
         overflow-y: auto;
-        overflow-x: auto;
-        margin: 10px;
+        box-sizing: border-box;
+        max-width: calc(100% - 2rem);
+        background-color: white;
+        border-radius: 8px;
       }
-
-
+      .card {
+        background-color: #f1f3f4;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        width: 100%;
+        margin: 1.5rem 0;
+        box-sizing: border-box;
+        max-width: 100%;
+        overflow: hidden;
+      }
     `,
   ],
 })
