@@ -3,7 +3,12 @@
 
 
 }
-// show the scrollable
+
+.content-header{
+  gap: 2rem;
+  padding: 10px;
+  margin-left: 30px;
+}
 
 
 .card {
@@ -11,7 +16,9 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -45,4 +52,8 @@ ul {
   padding: 1rem;
   background-color: #f5f5f5;
   border-radius: 4px;
+  margin: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }

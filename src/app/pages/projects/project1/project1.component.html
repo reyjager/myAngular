@@ -1,35 +1,42 @@
-<div class="content-header">
+<div class="content-header ms-4">
   <h1>Project 1</h1>
 </div>
 <div class="content-body">
   <div class="card">
     <h2>Personal Information</h2>
-    <p><strong>Full Name:</strong> {{ firstName }} {{ lastName }}</p>
-    <p><strong>Age:</strong> {{ age }}</p>
-    <p><strong>Address:</strong> {{ address }}</p>
-    <p><strong>Email:</strong> {{ email }}</p>
-    <p><strong>Contact:</strong> {{ contact }}</p>
+    <div class="object-info">
+
+      <p><strong>Full Name:</strong> {{ firstName }} {{ lastName }}</p>
+      <p><strong>Age:</strong> {{ age }}</p>
+      <p><strong>Address:</strong> {{ address }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Contact:</strong> {{ contact }}</p>
+    </div>
 
     <h3>Hobbies</h3>
-    <ul>
-      <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
-    </ul>
-
-    <h3>Personal Info Object</h3>
     <div class="object-info">
-      <p><strong>First Name:</strong> {{ personalInfo.firstName }}</p>
-      <p><strong>Last Name:</strong> {{ personalInfo.lastName }}</p>
-      <p><strong>Age:</strong> {{ personalInfo.age }}</p>
-      <p><strong>Address:</strong> {{ personalInfo.address }}</p>
-      <p><strong>Email:</strong> {{ personalInfo.email }}</p>
-      <p><strong>Contact:</strong> {{ personalInfo.contact }}</p>
-
-      <h4>Hobbies from Object</h4>
       <ul>
-        <li *ngFor="let hobby of personalInfo.hobbies">{{ hobby }}</li>
+        <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
       </ul>
     </div>
 
+
+    <h3>Personal Info Object</h3>
+    <div class="object-info">
+      <p><strong>First Name:</strong> {{ personalInfo.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ personalInfo.lastName }}</p>
+      <p><strong>Age:</strong> {{ personalInfo.age }}</p>
+      <p><strong>Address:</strong> {{ personalInfo.address }}</p>
+      <p><strong>Email:</strong> {{ personalInfo.email }}</p>
+      <p><strong>Contact:</strong> {{ personalInfo.contact }}</p>
+    </div>
+    <h4>Hobbies from Object</h4>
+      <div class="object-info">
+        <ul>
+          <li *ngFor="let hobby of personalInfo.hobbies">{{ hobby }}</li>
+        </ul>
+      </div>
+
     <h3>Personal Info Object</h3>
     <div class="object-info">
       <p><strong>First Name:</strong> {{ personalInfo.firstName }}</p>
@@ -39,7 +46,9 @@
       <p><strong>Email:</strong> {{ personalInfo.email }}</p>
       <p><strong>Contact:</strong> {{ personalInfo.contact }}</p>
 
-      <h4>Hobbies from Object</h4>
+    </div>
+    <h4>Hobbies from Object</h4>
+    <div class="object-info">
       <ul>
         <li *ngFor="let hobby of personalInfo.hobbies">{{ hobby }}</li>
       </ul>

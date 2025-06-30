@@ -8,9 +8,6 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <main class="main-content">
       <router-outlet></router-outlet>
-      <!-- <div class="card">
-        <p>kkkkkkkkk</p>
-      </div> -->
     </main>
   `,
   styles: [
@@ -18,8 +15,6 @@ import { RouterOutlet } from '@angular/router';
       .main-content {
         width: 100%;
         height: 100%;
-        // padding: 2rem;
-        // margin: 1.5rem;
         overflow-y: auto;
         box-sizing: border-box;
         max-width: calc(100% - 2rem);
