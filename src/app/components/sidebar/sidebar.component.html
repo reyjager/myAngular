@@ -4,37 +4,28 @@
   </div>
   <nav class="sidebar-nav">
     <ul>
-      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="material-icons">dashboard</i> Dashboard</a></li>
-
-      <li>
-        <a (click)="toggleSubmenu('projects')" [ngClass]="{'has-submenu': true, 'expanded': expandedMenus.projects}">
-          <div><i class="material-icons">folder</i> Projects</div>
-          <span class="arrow">{{ expandedMenus.projects ? '▼' : '▶' }}</span>
+      <li *ngFor="let item of menuItems">
+        <!-- Menu item without submenu -->
+        <a *ngIf="!item.submenu" [routerLink]="item.path" routerLinkActive="active">
+          <i *ngIf="item.icon" class="material-icons">{{item.icon}}</i> {{item.name}}
         </a>
-        <ul class="submenu" [ngClass]="{'expanded': expandedMenus.projects}">
-          <li><a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Projects</a></li>
-          <li><a routerLink="/projects/project1" routerLinkActive="active">Project 1</a></li>
-          <li><a routerLink="/projects/project2" routerLinkActive="active">Project 2</a></li>
-          <li><a routerLink="/projects/project3" routerLinkActive="active">Project 3</a></li>
-        </ul>
-      </li>
 
-      <li>
-        <a (click)="toggleSubmenu('reports')" [ngClass]="{'has-submenu': true, 'expanded': expandedMenus.reports}">
-          <div><i class="material-icons">bar_chart</i> Reports</div>
-          <span class="arrow">{{ expandedMenus.reports ? '▼' : '▶' }}</span>
-        </a>
-        <ul class="submenu" [ngClass]="{'expanded': expandedMenus.reports}">
-          <li><a routerLink="/reports" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Reports</a></li>
-          <li><a routerLink="/reports/report1" routerLinkActive="active">Report 1</a></li>
-          <li><a routerLink="/reports/report2" routerLinkActive="active">Report 2</a></li>
-          <li><a routerLink="/reports/report3" routerLinkActive="active">Report 3</a></li>
-        </ul>
+        <!-- Menu item with submenu -->
+        <ng-container *ngIf="item.submenu && item.submenu.length > 0">
+          <a (click)="toggleSubmenu(item.id || '')" [ngClass]="{'has-submenu': true, 'expanded': item.id && expandedMenus[item.id]}">
+            <div><i *ngIf="item.icon" class="material-icons">{{item.icon}}</i> {{item.name}}</div>
+            <span class="arrow">{{ item.id && expandedMenus[item.id] ? '▼' : '▶' }}</span>
+          </a>
+          <ul class="submenu" [ngClass]="{'expanded': item.id && expandedMenus[item.id]}">
+            <li *ngFor="let subItem of item.submenu">
+              <a [routerLink]="subItem.path" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{exact: subItem.path === item.path}">
+                <i *ngIf="subItem.icon" class="material-icons">{{subItem.icon}}</i> {{subItem.name}}
+              </a>
+            </li>
+          </ul>
+        </ng-container>
       </li>
-
-      <li><a routerLink="/settings" routerLinkActive="active"><i class="material-icons">settings</i> Settings</a></li>
-      <li><a routerLink="/profile" routerLinkActive="active"><i class="material-icons">person</i> Profile</a></li>
-      <li><a routerLink="/help" routerLinkActive="active"><i class="material-icons">help</i> Help</a></li>
     </ul>
   </nav>
 </aside>

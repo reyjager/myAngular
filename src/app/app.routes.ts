@@ -11,10 +11,14 @@ import { Project3Component } from './pages/projects/project3/project3.component'
 import { Report1Component } from './pages/reports/report1/report1.component';
 import { Report2Component } from './pages/reports/report2/report2.component';
 import { Report3Component } from './pages/reports/report3/report3.component';
+import { UserComponent } from './pages/users/users.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'users', component: UserComponent },
+  { path: 'users/create', component: UserComponent },
+  { path: 'users/:id', component: UserComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'projects/project1', component: Project1Component },
   { path: 'projects/project2', component: Project2Component },
